@@ -1,0 +1,154 @@
+<div pdf-save-content="idOne">
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<h1>{{ vm.title }}</h1>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<form id="expenseClaim" name="expenseClaim" class="form" novalidate>
+		        <div class="form-group">
+		        	<div class="row">
+		        		<div class="col-md-6 col-xs-6">
+		        			<h3>Employee Detail:</h3>
+		        			<span>[Please fill correct detail below]</span>
+		        			<hr />
+		        			<label>Branch Code:</label>
+		        			<input type="text" class="form-group" name="branchCode" data-ng-model="vm.form.branchCode" required />
+		        			<div ng-show="expenseClaim.branchCode.$dirty && expenseClaim.branchCode.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.branchCode.$error.required">Branch code is required.</small>
+				            </div>
+		        			<label>Name:</label>
+		        			<input type="text" class="form-group" name="name" data-ng-model="vm.form.name" required />
+		        			<div ng-show="expenseClaim.name.$dirty && expenseClaim.name.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.name.$error.required">Name is required.</small>
+				            </div>
+		        			<label>Date:</label>
+		        			<input type="date" class="form-group" placeholder="yyyy-MM-dd" name="date" data-ng-model="vm.form.date" required />
+		        			<div ng-show="expenseClaim.date.$dirty && expenseClaim.date.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.date.$error.required">Date is required.</small>
+				            </div>
+		        		</div>
+		        		<div class="col-md-6 col-xs-6">
+		        			<h3>Bank Account Details:</h3>
+		        			<span>[Payment will be made to this bank account]</span>
+		        			<hr />
+		        			<label>Bank / Branch code:</label>
+		        			<input type="text" class="form-group" name="bankCode" data-ng-model="vm.form.bankCode" required />
+		        			<div ng-show="expenseClaim.bankCode.$dirty && expenseClaim.bankCode.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.bankCode.$error.required">Bank / Branch code is required.</small>
+				            </div>
+		        			<label>Bank-Account No:</label>
+		        			<input type="text" class="form-group" name="bankAccount" data-ng-model="vm.form.bankAccount" required />
+		        			<div ng-show="expenseClaim.bankAccount.$dirty && expenseClaim.bankAccount.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.bankAccount.$error.required">Bank-Account No is required.</small>
+				            </div>
+		        			<label>Name in which A/C is held (As per your bank statement or cheque book):</label>
+		        			<span></span>
+		        			<input type="text" class="form-group" name="accountName" data-ng-model="vm.form.accountName" required />
+		        			<div ng-show="expenseClaim.accountName.$dirty && expenseClaim.accountName.$invalid">
+				                <small class="alert-danger" ng-show="expenseClaim.accountName.$error.required">Bank Account Name is required.</small>
+				            </div>
+		        		</div>
+		        		<div class="col-xs-12 col-md-12">
+		        			<h4>Please note:</h4>
+		        			<p>
+		        				It is mandatory for all the fields below to be completed by the employee prior to sending this expense claim form to Account Payable for processing.
+			        			<span class="btn-inline pull-right" add-button 
+			                      btn-text="Add New" 
+			                      btn-type="success" 
+			                      btn-icon="glyphicon glyphicon-plus" 
+			                      ng-click="vm.addRow()">
+			                    </span>
+		                    </p>
+		        			<table class="table">
+		        				<thead>
+		        					<th>Date Of Transaction</th>
+		        					<th>Cost Center</th>
+		        					<th>GL Code</th>
+		        					<th>Description</th>
+		        					<th>Currency</th>
+		        					<th>Amount</th>
+		        					<th>GST</th>
+		        					<th>Exchange Rate</th>
+		        					<th>Total Amount (RM)</th>
+		        				</thead>
+		        				<tbody>
+		        					<tr ng-repeat="item in vm.rows">
+		        						<td width="7%">
+		        							<input type="date" placeholder="yyyy-MM-dd" name="transactionDate" data-ng-model="item.transactionDate" required />
+		        						</td>
+		        						<td width="10%">
+		        							<input type="text" name="costCenter" data-ng-model="item.costCenter" required />
+		        						</td>
+		        						<td width="7%">
+		        							<input type="number" min="0" name="glCode" data-ng-model="item.glCode" required />
+		        						</td>
+		        						<td width="30%">
+		        							<input type="text" name="desc" data-ng-model="item.desc" required />
+		        						</td>
+		        						<td width="7%">
+		        							<input type="text" name="currency" data-ng-model="item.currency" required />
+		        						</td>
+		        						<td width="10%">
+		        							<input type="number" min="0" name="amount" data-ng-model="item.amount" required />
+		        						</td>
+		        						<td width="7%">
+		        							<input type="text" name="gst" data-ng-model="item.gst" required />
+		        						</td>
+		        						<td width="7%">
+		        							<input type="number" min="0" name="exchangeRate" data-ng-model="item.exchangeRate" required />
+		        						</td>
+		        						<td width="12%">
+		        							<input type="number" min="0" name="totalAmount" data-ng-model="item.totalAmount" required />
+		        						</td>
+		        					</tr>
+		        				</tbody>
+		        			</table>
+		        			<hr />
+		        			<div class="col-md-2 pull-right form-group">
+		        				Total Claims: <strong>{{ vm.getTotalAmount() | currency }}</strong>
+		        			</div>
+		        		</div>
+		        		<div class="col-md-12 col-xs-12">
+		        			<p>For tax purposes, you must disclose the names of Randstad employees in attendance at meals and entertainment expense claimed above. Please include all names in description.</p>
+		        			<div class="checkbox">
+			        			<label class="checkbox-inline">
+			        				<input type="checkbox" name="certify" data-ng-model="vm.form.certify" required/> 
+			        				I certify that the amounts claimed above were incurred on company business.
+			        			</label>
+		        			</div>
+		        			<p>
+		        				<strong><u>Please Note</u></strong>
+								<ul>
+									<li>Expense claims forms must be approved and signed by the appropriate level of authority before submitting to Account Payable Team.</li>
+									<li>Submitted expense claim form plus ALL supporting bills / receipts must be received by Account Payable Team by COB Tuesday for Friday payment run (fortnight).</li>
+									<li>Should you have any queries please contact email: <strong><i>gekyen.lim@randstad.com.sg</i></strong></li>
+								</ul>
+		        			</p>
+		        		</div>
+		        		<div class="col-md-12 col-xs-12" data-ng-model='amount'>
+		        			<div class="btn-inline pull-right" add-button 
+		                      btn-text="Save as PDF" 
+		                      btn-type="success" 
+		                      pdf-save-button="idOne" 
+		                      btn-icon="glyphicon glyphicon-floppy-save"
+		                      ng-click="">
+		                    </div>
+		        			<div class="btn-inline pull-right" add-button 
+		                      btn-text="Submit" 
+		                      btn-type="success"
+		                      btn-icon="glyphicon glyphicon-ok" 
+		                      data-ng-disabled="!expenseClaim.$valid" 
+		                      ng-click="vm.submitForm()">
+		                    </div>
+		        		</div>
+		        	</div>
+		            </div>
+		        </div>
+	    	</form>
+		</div>
+	</div>
+</div>

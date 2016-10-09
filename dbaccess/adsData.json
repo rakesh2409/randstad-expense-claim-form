@@ -1,0 +1,53 @@
+{
+	"ads": [
+		{
+		  	"id": "Classic", 
+		  	"name": "Classic Ad", 
+		  	"price": 269.99,
+		  	"qty": 1,
+		  	"total": 0,
+			"rules": [
+				{
+					"ruleid": "Rule1",
+					"customerid": "Uniliver",
+					"id": "Classic",
+					"qty": 3,
+					"discount": 539.98
+				}
+			]
+		},
+		{
+		  	"id": "Standout", 
+		  	"name": "Standout Ad", 
+		  	"price": 322.99,
+		  	"qty": 1,
+		  	"total": 0,
+			"rules": [
+				{
+					"ruleid" : "Rule2",
+					"customerid": "Apple",
+					"id": "Standout",
+					"qty": 1,
+					"discount": 299.99
+				}
+			]
+		},
+		{
+			"id": "Premium", 
+		  	"name": "Premium Ad", 
+		  	"price": 394.99,
+		  	"qty": 1,
+		  	"total": 0,
+			"rules": [
+				{
+					"ruleid": "Rule3",
+					"customerid": "Nike",
+					"id": "Premium",
+					"qty": "4>=",
+					"discount": 1519.96
+				}
+			]
+		}
+	]
+
+}
