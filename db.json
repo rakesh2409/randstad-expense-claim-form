@@ -1,0 +1,77 @@
+[
+	{
+		"commitmentPosition": "SI2.723878.1.B2017",
+		"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+		"paymentLines": [
+			{
+				"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+				"availableAmount": 1467186,
+				"fundingSource": "C8",
+				"group": [
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					}
+				]
+			},
+			{
+				"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+				"availableAmount": 1467186,
+				"fundingSource": "C8",
+				"group": [
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					}
+				]
+			},
+			{
+				"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+				"availableAmount": 1467186,
+				"fundingSource": "C8",
+				"group": [
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					},
+					{
+						"budgetLine": "BGUE-B2017-26.012000.010300-C8-EPSO",
+						"availableAmount": 1467186
+					}
+				]
+			}
+		]
+	}
+]
